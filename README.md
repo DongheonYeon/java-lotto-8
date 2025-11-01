@@ -23,7 +23,7 @@
 - [ ] 생성된 로또 번호를 오름차순으로 정렬
 
 ### 당첨 확인 기능
-- [ ] 일치하는 로또 번호 개수 계산
+- [x] 일치하는 로또 번호 개수 계산
 - [ ] 보너스 번호 일치 여부 확인
 - [ ] 당첨 판정 기준
     - [ ] 1등: 6개 번호 일치 / 2,000,000,000원 
@@ -53,10 +53,10 @@ src/
     └── java/
         └── lotto/
             ├── Application.java
-            ├── Lotto.java
             ├── controller/
             │   └── LottoController.java
             ├── domain/
+            │   ├── Lotto.java
             │   ├── LottoStorage.java
             │   ├── WinningNumber.java
             │   └── WinningRank.java

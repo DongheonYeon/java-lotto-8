@@ -31,7 +31,12 @@ public class WinningNumber {
         );
         this.bonusNumber = bonusNumber;
     }
-
+    
+    // 정적 팩토리 메서드 방식
+    public static WinningNumber of(List<Integer> numbers, int bonus) {
+        return new WinningNumber(numbers, bonus);
+    }
+    
     public List<Integer> getWinningNumbers() {
         return winningNumbers;
     }
