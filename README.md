@@ -72,7 +72,7 @@ src/
 ### Domain
 - `Lotto`: 로또 한 장을 표현하는 클래스
 - `LottoStorage`: 로또 여러 장을 보관하는 클래스
-- `WinningLotto`: 당첨 번호와 보너스 번호를 보관하는 클래스
+- `WinningNumber`: 당첨 번호와 보너스 번호를 보관하는 클래스
 - `WinningRank`: 당첨 등수를 정의하는 Enum
 
 ### Service
