@@ -45,6 +45,50 @@
 - [ ] 수익률 출력
 - [ ] 예외 발생 시 에러 문구 출력 (단, 에러 문구는 "[ERROR]"로 시작)
 
+## 클래스 구조
+
+```
+src/
+├── main/
+    └── java/
+        └── lotto/
+            ├── Application.java
+            ├── Lotto.java
+            ├── controller/
+            │   └── LottoController.java
+            ├── domain/
+            │   ├── LottoStorage.java
+            │   ├── WinningNumber.java
+            │   └── WinningRank.java
+            ├── service/
+            │   ├── LottoGenerator.java
+            │   ├── LottoWinningChecker.java
+            │   └── ResultCalculator.java
+            └── view/
+                ├── InputView.java
+                └── OutputView.java
+```
+
+### Domain
+- `Lotto`: 로또 한 장을 표현하는 클래스
+- `LottoStorage`: 로또 여러 장을 보관하는 클래스
+- `WinningLotto`: 당첨 번호와 보너스 번호를 보관하는 클래스
+- `WinningRank`: 당첨 등수를 정의하는 Enum
+
+### Service
+- `LottoGenerator`: 로또를 발행하는 기능을 가진 클래스
+- `LottoWinningChecker`: 로또 당첨을 확인하는 기능을 가진 클래스
+- `ResultCalculator`: 로또 수익률 계산 기능을 가진 클래스
+
+### View
+- `InputView`: 입력을 처리하는 클래스
+- `OutputView`: 출력을 처리하는 클래스
+
+### Controller
+- `LottoController`: 전체 프로그램 흐름을 제어하는 클래스
+
+## 테스트 케이스 목록
+
 ## 실행 예시
 
 ```
