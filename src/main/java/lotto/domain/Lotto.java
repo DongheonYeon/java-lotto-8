@@ -19,6 +19,14 @@ public class Lotto {
         this.numbers = numbers;
     }
 
+    @Override
+    public String toString() {
+        return numbers.stream()
+                .sorted()
+                .toList()
+                .toString();
+    }
+
     private void validate(List<Integer> numbers) {
         validateSize(numbers);
         validateRange(numbers);
@@ -61,5 +69,4 @@ public class Lotto {
         return List.copyOf(numbers);
     }
 
-    // TODO: 추가 기능 구현
 }
