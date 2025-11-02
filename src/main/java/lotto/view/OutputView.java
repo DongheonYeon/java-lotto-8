@@ -9,8 +9,8 @@ import java.util.Map;
 
 public class OutputView {
 
-    private static final String PURCHASE_COUNT_FORMAT = "%d개를 구매했습니다.";
-    private static final String WINNING_STATISTICS_HEADER = "당첨 통계";
+    private static final String PURCHASE_COUNT_FORMAT = "\n%d개를 구매했습니다.";
+    private static final String WINNING_STATISTICS_HEADER = "\n당첨 통계";
     private static final String WINNING_STATISTICS_DIVIDER = "---";
     private static final String PROFIT_RATE_FORMAT = "총 수익률은 %s%%입니다.";
     private static final String ERROR_PREFIX = "[ERROR] ";
