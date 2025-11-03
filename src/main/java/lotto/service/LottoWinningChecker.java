@@ -23,8 +23,7 @@ public class LottoWinningChecker {
 
     // 여러개 계산
     public Map<WinningRank, Long> countByRank(List<Lotto> tickets, WinningNumber winning) {
-        return tickets.stream()
-                .map(t -> evaluate(t, winning))
-                .collect(Collectors.groupingBy(r -> r, Collectors.counting()));
+        return tickets.stream().map(t -> evaluate(t, winning))
+            .collect(Collectors.groupingBy(r -> r, Collectors.counting()));
     }
 }

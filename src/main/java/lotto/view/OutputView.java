@@ -47,17 +47,22 @@ public class OutputView {
 
     private static void printRankStatistic(WinningRank rank, Map<WinningRank, Integer> statistics) {
         int count = statistics.getOrDefault(rank, 0);
-        String matchDescription = (rank == WinningRank.SECOND)
-                ? "5개 일치, 보너스 볼 일치"
-                : rank.getMatchCount() + "개 일치";
+
+        String matchDescription;
+        if (rank == WinningRank.SECOND) {
+            matchDescription = "5개 일치, 보너스 볼 일치";
+        } else {
+            matchDescription = rank.getMatchCount() + "개 일치";
+        }
+
         String formattedPrize = PRIZE_FORMATTER.format(rank.getPrize());
-        System.out.println(String.format("%s (%s원) - %d개", matchDescription, formattedPrize, count));
+        System.out.printf("%s (%s원) - %d개%n", matchDescription, formattedPrize, count);
     }
 
     // printProfitRate
     public static void printProfitRate(double profitRate) {
         String formattedRate = RATE_FORMATTER.format(profitRate);
-        System.out.println(String.format(PROFIT_RATE_FORMAT, formattedRate));
+        System.out.printf((PROFIT_RATE_FORMAT) + "%n", formattedRate);
     }
 
     // printErrorMessage

@@ -23,16 +23,15 @@ public class WinningNumber {
         validateBonusRange(bonusNumber);
         validateBonusNotDuplicated(winningNumbers, bonusNumber);
 
-        // 오름차순 정렬된 불변 리스트로 보관
-        this.winningNumbers = Collections.unmodifiableList(
-                winningNumbers.stream()
-                        .sorted()
-                        .collect(Collectors.toList())
+        this.winningNumbers = Collections.unmodifiableList( // 오름차순 정렬된 불변 리스트로 보관
+            winningNumbers.stream()
+                .sorted()
+                .collect(Collectors.toList())
         );
         this.bonusNumber = bonusNumber;
     }
     
-    // 정적 팩토리 메서드 방식
+    // Static Factory Method
     public static WinningNumber of(List<Integer> numbers, int bonus) {
         return new WinningNumber(numbers, bonus);
     }

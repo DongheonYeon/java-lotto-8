@@ -1,5 +1,7 @@
 package lotto.domain;
 
+import java.util.Arrays;
+
 public enum WinningRank {
     FIRST(6, false, 2_000_000_000),
     SECOND(5, true, 30_000_000),
@@ -25,13 +27,18 @@ public enum WinningRank {
         }
 
         // 나머지는 matchCount 기준으로 판별
-        for (WinningRank rank : values()) {
-            if (rank.matchCount == matchCount && !rank.requiresBonus) {
-                return rank;
-            }
-        }
+        return findByMatchCount(matchCount);
+    }
 
-        return NONE; // 3개 미만 또는 불일치 시
+    private static WinningRank findByMatchCount(int matchCount) {
+        return Arrays.stream(values())
+                .filter(rank -> rank.isMatch(matchCount))
+                .findFirst()
+                .orElse(NONE);
+    }
+
+    private boolean isMatch(int matchCount) {
+        return this.matchCount == matchCount && !this.requiresBonus;
     }
 
     public int getPrize() {

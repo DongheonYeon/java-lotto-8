@@ -22,9 +22,9 @@ public class Lotto {
     @Override
     public String toString() {
         return numbers.stream()
-                .sorted()
-                .toList()
-                .toString();
+            .sorted()
+            .toList()
+            .toString();
     }
 
     private void validate(List<Integer> numbers) {
@@ -41,7 +41,7 @@ public class Lotto {
 
     private void validateRange(List<Integer> numbers) {
         boolean hasInvalidNumber = numbers.stream()
-                .anyMatch(number -> number < MIN_LOTTO_NUMBER || number > MAX_LOTTO_NUMBER);
+            .anyMatch(number -> number < MIN_LOTTO_NUMBER || number > MAX_LOTTO_NUMBER);
 
         if (hasInvalidNumber) {
             throw new IllegalArgumentException(ERROR_INVALID_RANGE);
@@ -57,8 +57,8 @@ public class Lotto {
 
     public int countMatch(List<Integer> winningNumbers) {
         return (int) numbers.stream()
-                .filter(winningNumbers::contains)
-                .count();
+            .filter(winningNumbers::contains)
+            .count();
     }
 
     public boolean contains(int number) {

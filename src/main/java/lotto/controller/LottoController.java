@@ -66,9 +66,9 @@ public class LottoController {
 
     private Map<WinningRank, Integer> convertToInteger(Map<WinningRank, Long> longMap) {
         return longMap.entrySet().stream()
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        entry -> entry.getValue().intValue()
-                ));
+            .collect(Collectors.toMap(
+                Map.Entry::getKey,
+                entry -> entry.getValue().intValue()
+            ));
     }
 }

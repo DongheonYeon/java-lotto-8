@@ -35,9 +35,9 @@ public class LottoGenerator {
 
     private Lotto generateLotto() {
         List<Integer> numbers = Randoms.pickUniqueNumbersInRange(
-                MIN_LOTTO_NUMBER,
-                MAX_LOTTO_NUMBER,
-                SINGLE_LOTTO_SIZE
+            MIN_LOTTO_NUMBER,
+            MAX_LOTTO_NUMBER,
+            SINGLE_LOTTO_SIZE
         );
         return new Lotto(numbers);
     }
